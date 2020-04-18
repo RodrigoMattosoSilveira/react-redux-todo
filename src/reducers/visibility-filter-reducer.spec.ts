@@ -1,4 +1,3 @@
-import shortid from 'shortid';
 import { VISIBILITY_FILTER_TYPES } from '../reference/references'
 import { VISIBILITY_FILTER_ACTIONS } from '../reference/references'
 import { visibility_filter_reducer }  from './visibility-filter-reducer';
