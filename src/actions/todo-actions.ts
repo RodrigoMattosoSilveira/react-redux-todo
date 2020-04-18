@@ -1,8 +1,11 @@
+import shortid from 'shortid';
+
 import { TODO_ACTIONS } from '../reference/references';
 import { TodoActionInterface } from '../interfaces/interfaces';
 
 export const todo_add = (text: string): TodoActionInterface => ({
   type: TODO_ACTIONS.CREATE,
+  id: shortid.generate(),
   text: text
 })
 
