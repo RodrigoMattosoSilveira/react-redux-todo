@@ -17,7 +17,8 @@ describe('todo actions', () => {
         const idString = 'id-string';
         expect(actions.todo_toggle(idString)).toEqual({
             type: TODO_ACTIONS.TOGGLE,
-            id: idString
+            id: idString,
+            text: 'ignore'
         })
     });
 
@@ -35,7 +36,8 @@ describe('todo actions', () => {
         const idString = 'id-string';
         expect(actions.todo_delete(idString)).toEqual({
             type: TODO_ACTIONS.DELETE,
-            id: idString
+            id: idString,
+            text: 'ignore'
         })
     });
 

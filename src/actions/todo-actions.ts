@@ -11,7 +11,8 @@ export const todo_add = (text: string): TodoActionInterface => ({
 
 export const todo_toggle = (id: string): TodoActionInterface => ({
   type: TODO_ACTIONS.TOGGLE,
-  id: id
+  id: id,
+  text: 'ignore'
 })
 export const todo_update = (id: string, text: string): TodoActionInterface => ({
   type: TODO_ACTIONS.UPDATE,
@@ -20,5 +21,6 @@ export const todo_update = (id: string, text: string): TodoActionInterface => ({
 })
 export const todo_delete = (id: string): TodoActionInterface => ({
   type: TODO_ACTIONS.DELETE,
-  id: id
+  id: id,
+  text: 'ignore'
 })
