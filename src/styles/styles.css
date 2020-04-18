@@ -30,9 +30,10 @@ body {
 }
 
 .todo-header {
-    color: rgba(175, 47, 47, 0.15);
+    color: rgba(175, 47, 47, 0.50);
     text-align: center;
     font-size: 400%;
+    font-size: 16px;
 }
 /* Todo list app styles  */
 .todo-list-app {
@@ -45,6 +46,7 @@ body {
 .todo-form input,
 .todo-item {
   border: 1px solid #ececec;
+  font-size: 16px;
 }
 
 .todo-form input {
@@ -91,6 +93,7 @@ body {
   border: 0;
   border-bottom: 1px solid transparent;
   transition: .25s border-bottom ease-in-out;
+  font-size: 16px;
 }
 
 .todo-item input:focus {
@@ -131,7 +134,7 @@ body {
   font-size: 28px;
   cursor: pointer;
   line-height: 1;
-  color: #ececec;
+  color: rgb(200, 200, 200);;
   transition: .25s color ease-in-out;
 }
 
@@ -149,6 +152,24 @@ body {
 .filter-active {
   border-bottom: 1px solid black;
 }
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {background: #eee;}
+
+.all {color: orange;}
+.open {color: red;}
+.done {color: green;}
+.danger {color: red;}
+.default {color: black;}
+
 .show-todo-item {
 }
 .hide-todo-item {
