@@ -131,7 +131,7 @@ body {
   font-size: 28px;
   cursor: pointer;
   line-height: 1;
-  color: #ececec;
+  color: rgb(200, 200, 200);;
   transition: .25s color ease-in-out;
 }
 
