@@ -5,7 +5,7 @@ import * as React from 'react'
 import TodoItem from './todo-item'
 
 // Import interfaces
-import { TodoListInterface } from './../interfaces'
+import { TodoListInterface } from './../interfaces/interfaces'
 
 function computeVisible (visibilityFilter: string, isCompleted: boolean ): string {
     let className = 'show-todo-item';

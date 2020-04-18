@@ -1,10 +1,10 @@
 // Import dependencies
 import * as React from 'react';
 
-import { VISIBILITY_TYPES } from '../reference/visibility-types';
+import { VISIBILITY_TYPES } from '../reference/references';
 
 // Import interfaces
-import { VisibilityFiltersInterface } from './../interfaces'
+import { VisibilityFiltersInterface } from './../interfaces/interfaces'
 
 function computeClassNames (myVisibilityFilter: string): string {
     return 'btn ' + myVisibilityFilter;

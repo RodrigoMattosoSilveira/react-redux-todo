@@ -8,7 +8,7 @@ import TodoList from './components/todo-list';
 import VisibilityFilters from './components/visibility-filters';
 
 // Import interfaces
-import { TodoInterface } from './interfaces'
+import { TodoInterface } from './interfaces/interfaces'
 
 // Import styles
 import './styles/styles.css'
