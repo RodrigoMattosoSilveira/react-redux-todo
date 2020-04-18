@@ -1,7 +1,7 @@
 // Import dependencies
 import * as React from 'react';
 
-import { VISIBILITY_TYPES } from '../reference/references';
+import { VISIBILITY_FILTER_TYPES } from '../reference/references';
 
 // Import interfaces
 import { VisibilityFiltersInterface } from './../interfaces/interfaces'
@@ -21,19 +21,19 @@ const VisibilityFilters = (props: VisibilityFiltersInterface) => {
     <div className="visibility-filter">
         <span>Show: </span>
         <button
-            className={computeClassNames(VISIBILITY_TYPES.ALL)}
-            disabled={isDisabled(VISIBILITY_TYPES.ALL, props.visibilityFilter)}
-            onClick={() => props.handleVisibilityFilter(VISIBILITY_TYPES.ALL)}>{VISIBILITY_TYPES.ALL}
+            className={computeClassNames(VISIBILITY_FILTER_TYPES.ALL)}
+            disabled={isDisabled(VISIBILITY_FILTER_TYPES.ALL, props.visibilityFilter)}
+            onClick={() => props.handleVisibilityFilter(VISIBILITY_FILTER_TYPES.ALL)}>{VISIBILITY_FILTER_TYPES.ALL}
         </button>
         <button
-            className={computeClassNames(VISIBILITY_TYPES.OPEN)}
-            disabled={isDisabled(VISIBILITY_TYPES.OPEN, props.visibilityFilter)}
-            onClick={() => props.handleVisibilityFilter(VISIBILITY_TYPES.OPEN)}>{VISIBILITY_TYPES.OPEN}
+            className={computeClassNames(VISIBILITY_FILTER_TYPES.OPEN)}
+            disabled={isDisabled(VISIBILITY_FILTER_TYPES.OPEN, props.visibilityFilter)}
+            onClick={() => props.handleVisibilityFilter(VISIBILITY_FILTER_TYPES.OPEN)}>{VISIBILITY_FILTER_TYPES.OPEN}
         </button>
         <button
-            className={computeClassNames(VISIBILITY_TYPES.DONE)}
-            disabled={isDisabled(VISIBILITY_TYPES.DONE, props.visibilityFilter)}
-            onClick={() => props.handleVisibilityFilter(VISIBILITY_TYPES.DONE)}>{VISIBILITY_TYPES.DONE}
+            className={computeClassNames(VISIBILITY_FILTER_TYPES.DONE)}
+            disabled={isDisabled(VISIBILITY_FILTER_TYPES.DONE, props.visibilityFilter)}
+            onClick={() => props.handleVisibilityFilter(VISIBILITY_FILTER_TYPES.DONE)}>{VISIBILITY_FILTER_TYPES.DONE}
         </button>
     </div>
   )

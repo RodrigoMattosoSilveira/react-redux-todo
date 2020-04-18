@@ -3,17 +3,22 @@ import { TODO_ACTIONS } from '../reference/references';
 
 describe('todo actions', () => {
     it('todo_add should create CREATE action', () => {
-        expect(actions.todo_add('Use Redux')).toEqual({
-            type: TODO_ACTIONS.CREATE,
-            text: 'Use Redux'
-        })
+        const todoText = 'Use Redux'
+        const todoAction = actions.todo_add(todoText);
+        expect (Object.keys(todoAction).length).toEqual(3);
+        expect (Object.keys(todoAction).indexOf('type')).toBeGreaterThan(-1);
+        expect (Object.keys(todoAction).indexOf('id')).toBeGreaterThan(-1);
+        expect (Object.keys(todoAction).indexOf('text')).toBeGreaterThan(-1);
+        expect (todoAction.type).toBe(TODO_ACTIONS.CREATE);
+        expect (todoAction.text).toBe(todoText);
     });
 
     it('todo_toggle should create TOGGLE action', () => {
         const idString = 'id-string';
         expect(actions.todo_toggle(idString)).toEqual({
             type: TODO_ACTIONS.TOGGLE,
-            id: idString
+            id: idString,
+            text: 'ignore'
         })
     });
 
@@ -31,7 +36,8 @@ describe('todo actions', () => {
         const idString = 'id-string';
         expect(actions.todo_delete(idString)).toEqual({
             type: TODO_ACTIONS.DELETE,
-            id: idString
+            id: idString,
+            text: 'ignore'
         })
     });
 

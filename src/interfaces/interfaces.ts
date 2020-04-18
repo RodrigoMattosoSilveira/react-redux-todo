@@ -39,8 +39,8 @@ export interface VisibilityFiltersInterface {
 // Todo Action Interface
 export interface TodoActionInterface {
     type: string,
-    id?: string,
-    text?: string
+    id: string,
+    text: string
 }
 
 // Visibility Action Interface
