@@ -35,3 +35,10 @@ export interface VisibilityFiltersInterface {
     visibilityFilter: string;
     handleVisibilityFilter: (filter: string) => void;
 }
+
+// Todo Action Interface
+export interface TodoActionInterface {
+    type: string,
+    id?: string,
+    text?: string
+}
