@@ -30,7 +30,7 @@ body {
 }
 
 .todo-header {
-    color: rgba(175, 47, 47, 0.15);
+    color: rgba(175, 47, 47, 0.50);
     text-align: center;
     font-size: 400%;
 }
