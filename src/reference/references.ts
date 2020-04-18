@@ -5,12 +5,12 @@ export const TODO_ACTIONS = {
     DELETE: 'DELETE'
 }
 
-export const VISIBILITY_TYPES = {
+export const VISIBILITY_FILTER_TYPES = {
     ALL: 'all',
     OPEN: 'open',
     DONE: 'done'
 }
 
-export const VISIBILITY_ACTIONS = {
+export const VISIBILITY_FILTER_ACTIONS = {
     SET: 'SET'
 }
