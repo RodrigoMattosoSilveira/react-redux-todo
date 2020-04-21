@@ -5,12 +5,11 @@ import * as React from 'react'
 import TodoItem from './todo-item'
 
 // Import interfaces
-import { TodoListInterface } from './../interfaces/interfaces'
+import { TodoListInterface } from '../interfaces/interfaces'
 
 function computeVisible (visibilityFilter: string, isCompleted: boolean ): string {
     let className = 'show-todo-item';
-    if ((visibilityFilter === 'open' && isCompleted === true) ||
-        (visibilityFilter === 'done' && isCompleted === false)) {
+    if ((visibilityFilter === 'open' && isCompleted) || (visibilityFilter === 'done' && !isCompleted)) {
         className = 'hide-todo-item';
     }
     return className;
@@ -24,11 +23,7 @@ const TodoList = (props: TodoListInterface) => {
         {props.todos.map((todo) => (
           <li key={todo.id} className={computeVisible(props.visibilityFilter, todo.isCompleted)}>
             <TodoItem
-              todo={todo}
-              handleTodoUpdate={props.handleTodoUpdate}
-              handleTodoRemove={props.handleTodoRemove}
-              handleTodoComplete={props.handleTodoComplete}
-              handleTodoBlur={props.handleTodoBlur}
+              id={todo.id}
             />
           </li>
         ))}

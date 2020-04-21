@@ -13,8 +13,7 @@ import { todo_toggle, todo_update, todo_delete } from "../actions/todo-actions";
 // 	id: string
 // }
 interface OwnProps {
-	id: string,
-	handleTodoBlur: () => {}
+	id: string
 }
 
 function mapStateToProps (state: RootState, ownProps: OwnProps) {
@@ -40,6 +39,15 @@ type StateProps = ReturnType<typeof mapStateToProps>
 type DispatchProps = typeof mapDispatchToProps
 type Props = StateProps & DispatchProps & OwnProps
 
+// Check if todo item has title
+function handleTodoBlur(event: React.ChangeEvent<HTMLInputElement>) {
+	if (event.target.value.length === 0) {
+		event.target.classList.add('todo-input-error')
+	} else {
+		event.target.classList.remove('todo-input-error')
+	}
+}
+
 // TodoItem component
 const TodoItem = (props: Props) => {
   return (
@@ -54,7 +62,7 @@ const TodoItem = (props: Props) => {
       <div className="todo-item-input-wrapper">
         <input
           value={props.todo.text}
-          onBlur={props.handleTodoBlur}
+          onBlur={handleTodoBlur}
           onChange={() => props.todo_update(props.todo.id, props.todo.text)}
         />
       </div>
