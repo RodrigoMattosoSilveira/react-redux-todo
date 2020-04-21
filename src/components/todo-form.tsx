@@ -3,7 +3,7 @@ import * as React from 'react';
 
 // Import interfaces
 import { todo_add } from '../actions/todo-actions';
-import { connect, ConnectedProps } from 'react-redux'
+import { connect, ConnectedProps } from 'react-redux';
 
 type PropsFromRedux = ConnectedProps<typeof connector>
 interface Props extends PropsFromRedux {

@@ -1,6 +1,6 @@
 // Import dependencies
 import * as React from 'react'
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
 
 // Import interfaces
 import { RootState } from '../reducers/rooReducer'
