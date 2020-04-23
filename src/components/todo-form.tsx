@@ -1,7 +1,7 @@
 // Import dependencies
 import * as React from 'react';
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import { IconButton, Box, Divider, TextField } from "@material-ui/core";
+import { IconButton, Grid, TextField } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
 
 // Import interfaces
@@ -25,39 +25,15 @@ const connector = connect(
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
-		root: {},
+		root: {
+			flexGrow: 1,
+		},
 	}),
 );
 
 // Todo form component
 const TodoForm = (props: Props) => {
 	const classes = useStyles();
-	
-	// // Create ref for form input
-	// const inputRef = React.useRef<HTMLInputElement>(null);
-	//
-	// // Create form state
-	// const [formState, setFormState] = React.useState('');
-	//
-	// // Handle todo input change
-	// function handleInputOnChange(event: React.ChangeEvent<HTMLInputElement>) {
-	// 	// Update form state with the text from input
-	// 	setFormState(event.target.value)
-	// }
-	
-	// // Handle 'Enter' in todo input
-	// function handleInputOnKeyPress(event: React.KeyboardEvent) {
-	// 	// Check for 'Enter' key
-	// 	if (event.key === 'Enter') {
-	// 		// Dispatch
-	// 		props.todo_add(formState)
-	//
-	// 		// Reset the input field
-	// 		if (inputRef && inputRef.current) {
-	// 			inputRef.current.value = '';
-	// 		}
-	// 	}
-	// }
 	const [textFieldValid, setTextFieldValid] = React.useState(true);
 	const [textFieldValue, setTextFieldValue] = React.useState("");
 	const [pristine, setPristine] = React.useState(true);
@@ -96,11 +72,11 @@ const TodoForm = (props: Props) => {
 		// 		onKeyPress={event => handleInputOnKeyPress(event)}
 		// 	/>
 		// </div>
-		<div>
-			<form className={classes.root} noValidate autoComplete="off">
-				<div style={{ width: "100%" }}>
-					<Box display="flex" flexDirection="row" p={1} m={1}>
-						<Box p={1}>
+		<div className={classes.root} style={{marginTop: '10px'}}>
+			<form noValidate autoComplete="off">
+				<div>
+					<Grid container spacing={1}>
+						<Grid item xs={11}>
 							<TextField
 								id="outlined-basic"
 								label="Enter todo item"
@@ -112,10 +88,10 @@ const TodoForm = (props: Props) => {
 										: "Todo text must have at least one non-blank character"
 								}
 								value={textFieldValue}
+								fullWidth
 							/>
-						</Box>
-						<Divider orientation="vertical" flexItem />
-						<Box p={1}>
+						</Grid>
+						<Grid item xs={1}>
 							<IconButton
 								color="primary"
 								disabled={pristine || !textFieldValid}
@@ -124,8 +100,8 @@ const TodoForm = (props: Props) => {
 							>
 								<SaveIcon />
 							</IconButton>
-						</Box>
-					</Box>
+						</Grid>
+					</Grid>
 				</div>
 			</form>
 		</div>
