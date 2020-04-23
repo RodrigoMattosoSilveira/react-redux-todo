@@ -1,11 +1,10 @@
 // Import external dependencies
 import * as React from 'react';
-
-import { VISIBILITY_FILTER_TYPES } from '../reference/references';
+import {connect} from 'react-redux';
 
 // Import internal dependencies
 import {RootState} from "../reducers/rooReducer";
-import {connect} from "react-redux";
+import { VISIBILITY_FILTER_TYPES } from '../reference/references';
 import { visibility_action_set } from "../actions/visibility-filter-actions";
 
 // Local methods
