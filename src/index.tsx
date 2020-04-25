@@ -6,7 +6,7 @@ import {createStore} from "redux";
 
 // Internal Dependencies
 import TodoApp from "./components/todo-app";
-import {rootReducer} from "./reducers/rooReducer";
+import {rootReducer} from "./reducers/rootReducer";
 
 const store = createStore(rootReducer)
 
