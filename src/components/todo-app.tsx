@@ -1,17 +1,13 @@
 // External Dependencies
 import * as React from "react";
-import {connect, useSelector} from "react-redux";
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
+
 
 
 // Internal Dependencies
-import {RootState} from "../reducers/rootReducer";
 import TodoForm from "./todo-form";
 import TodoList from "./todo-list";
 import VisibilityFilters from "./visibility-filters";
@@ -31,8 +27,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TodoApp = () => {
-	const todoList  = useSelector((state: RootState) => state.todo_reducer);
-	const visibilityFilter  = useSelector((state: RootState) => state.visibility_filter_reducer);
 	const classes = useStyles();
 	return (
 		<div className="todo-list-app">

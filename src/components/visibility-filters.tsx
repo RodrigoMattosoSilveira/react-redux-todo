@@ -67,9 +67,6 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 // Local methods
-function computeClassNames (myVisibilityFilter: string): string {
-    return 'btn ' + myVisibilityFilter ;
-}
 function isDisabled (myVisibilityFilter: string, propVisibilityFilter: string ): boolean {
     return myVisibilityFilter === propVisibilityFilter;
 }
