@@ -45,7 +45,6 @@ body {
 /* Todo form styles */
 .todo-form input,
 .todo-item {
-  border: 1px solid #ececec;
   font-size: 16px;
 }
 
@@ -93,7 +92,7 @@ body {
   border: 0;
   border-bottom: 1px solid transparent;
   transition: .25s border-bottom ease-in-out;
-  font-size: 16px;
+  font-size: 0.875rem;
 }
 
 .todo-item input:focus {
@@ -118,7 +117,7 @@ body {
 
 .todo-item-unchecked:hover {
   background: hsla(168, 76%, 42%, .25);
-  border: 1px solid hsl(168, 76%, 42%, .25);
+  border: 1px solid hsla(168, 76%, 42%, .25);
 }
 
 .todo-item-checked {
@@ -170,8 +169,42 @@ body {
 .danger {color: red;}
 .default {color: black;}
 
-.show-todo-item {
+.todo-is-completed {
+    width: 4px;
 }
-.hide-todo-item {
-    display:none;
+span.todo-item-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #ececec;
+    transition: 0.25s all ease-in-out;
+}
+.todo-item-unchecked:hover {
+    background: hsla(168, 76%, 42%, 0.25);
+    border: 1px solid hsla(168, 76%, 42%, 0.25);
+}
+.todo-item-checked {
+    color: #fff;
+    background: #1abc9c;
+    border: 1px solid #1abc9c;
+}
+
+.todo-item input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    transition: 0.25s border-bottom ease-in-out;
+    font-size: 0.875rem;
+}
+.todo-item input:focus {
+    outline: 0;
+    border-bottom: 1px solid #3498db;
+}
+
+/* Remove item */
+.todo-delete-me {
+    width: 4px;
 }

@@ -3,7 +3,7 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 
 // Import internal dependencies
-import {RootState} from "../reducers/rooReducer";
+import {RootState} from "../reducers/rootReducer";
 import { VISIBILITY_FILTER_TYPES } from '../reference/references';
 import { visibility_action_set } from "../actions/visibility-filter-actions";
 

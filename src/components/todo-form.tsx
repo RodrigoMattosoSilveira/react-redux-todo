@@ -72,10 +72,10 @@ const TodoForm = (props: Props) => {
 		// 		onKeyPress={event => handleInputOnKeyPress(event)}
 		// 	/>
 		// </div>
-		<div className={classes.root} style={{marginTop: '10px'}}>
+		<div className={classes.root} style={{marginTop: '10px', marginBottom: '10px'}}>
 			<form noValidate autoComplete="off">
 				<div>
-					<Grid container spacing={1}>
+					<Grid container className={classes.root} spacing={1}>
 						<Grid item xs={11}>
 							<TextField
 								id="outlined-basic"

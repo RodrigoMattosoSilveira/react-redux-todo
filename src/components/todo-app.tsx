@@ -11,7 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 
 
 // Internal Dependencies
-import {RootState} from "../reducers/rooReducer";
+import {RootState} from "../reducers/rootReducer";
 import TodoForm from "./todo-form";
 import TodoList from "./todo-list";
 import VisibilityFilters from "./visibility-filters";
@@ -48,8 +48,8 @@ const TodoApp = () => {
 			</div>
 			<TodoForm />
 			<TodoList
-				todoList={todoList}
-				visibilityFilter={visibilityFilter}
+				// todoList={todoList}
+				// visibilityFilter={visibilityFilter}
 			/>
 			<VisibilityFilters />
 		</div>
