@@ -1,6 +1,6 @@
 // Import dependencies
 import * as React from 'react'
-import { RootState } from '../reducers/rooReducer'
+import { RootState } from '../reducers/rootReducer'
 import {connect} from 'react-redux';
 
 // Import TodoItem
