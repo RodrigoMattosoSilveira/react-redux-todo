@@ -163,12 +163,6 @@ body {
 
 .btn:hover {background: #eee;}
 
-.all {color: orange;}
-.open {color: red;}
-.done {color: green;}
-.danger {color: red;}
-.default {color: black;}
-
 .todo-is-completed {
     width: 4px;
 }

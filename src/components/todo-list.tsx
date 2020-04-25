@@ -108,6 +108,7 @@ const TodoList = (props: Props) => {
 									  <TableCell
 										  component="th"
 										  scope="row"
+										  className={"todo-is-completed"}
 										  onClick={() => props.todo_toggle(todo.id)}
 									  >
 										  {computeState(todo.isCompleted)}
