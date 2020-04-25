@@ -3,7 +3,7 @@ import * as React from 'react'
 import {connect} from 'react-redux';
 
 // Import interfaces
-import { RootState } from '../reducers/rooReducer'
+import { RootState } from '../reducers/rootReducer'
 import { TodoInterface } from "../interfaces/interfaces";
 import { todo_toggle, todo_update, todo_delete } from "../actions/todo-actions";
 
