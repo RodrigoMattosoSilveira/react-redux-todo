@@ -48,8 +48,8 @@ const TodoApp = () => {
 			</div>
 			<TodoForm />
 			<TodoList
-				todoList={todoList}
-				visibilityFilter={visibilityFilter}
+				// todoList={todoList}
+				// visibilityFilter={visibilityFilter}
 			/>
 			<VisibilityFilters />
 		</div>
