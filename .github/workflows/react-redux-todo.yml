@@ -23,4 +23,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          FOLDER: ./build # The folder the action should deploy.
+          FOLDER: ./build/static # The folder the action should deploy.
