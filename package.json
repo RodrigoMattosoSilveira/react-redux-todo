@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/RodrigoMattosoSilveira/react-redux-todo"
   },
-  "homepage": ".",
+  "homepage": "https://rodrigomattososilveira.github.io/react-redux-todo/",
   "license": "MIT",
   "private": true,
   "dependencies": {
