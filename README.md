@@ -9,7 +9,7 @@ $ yarn deploy
 Navigate to: [GitHub pages](https://rodrigomattososilveira.github.io/react-redux-todo/)
 
 ## Build status
-![](https://github.com/actions/react-redux-todo/workflows/React%20Redux%20Material%20Exercise/badge.svg)
+![](https://github.com/rodrigomattososilveira/react-redux-todo>/workflows/React%20Redux%20Material%20Exercise/badge.svg)
 
 # Introduction
 This is an exercise to learn React, Redux, and Material UI.
