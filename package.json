@@ -1,7 +1,7 @@
 {
-  "name": "react_todo",
+  "name": "React_Redux_Material_Exercise",
   "author": "Rodrigo Silveira",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://rodrigomattososilveira.github.io/react-redux-todo/",
   "private": false,
   "license": "MIT",

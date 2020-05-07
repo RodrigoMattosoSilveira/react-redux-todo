@@ -1,5 +1,5 @@
 # GitHub Pages
-## To publish it
+## To publish it manually
 Run the following command:
 ````bash
 rodrigomattososilveira@Rodrigos-MBP-2[~/projects/react_todo]
@@ -7,6 +7,9 @@ $ yarn deploy
 ````
 ## To view it
 Navigate to: [GitHub pages](https://rodrigomattososilveira.github.io/react-redux-todo/)
+
+## Build status
+https://rodrigomattososilveira.github.io/react-redux-todo/workflows/React%20Redux%20Material%20Exercise/badge.svg
 
 # Introduction
 This is an exercise to learn React, Redux, and Material UI.
