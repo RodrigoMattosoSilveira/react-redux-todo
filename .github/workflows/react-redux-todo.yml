@@ -1,7 +1,7 @@
-name: Build and Deploy
+name: React Redux Material Exercise
 on:
   push:
-    branches: [ master, issue-14-deploy-github-pages ]
+    branches: [ master, issue-16-badge ]
   pull_request:
     branches: [ master ]
 
