@@ -1,14 +1,10 @@
 {
   "name": "react_todo",
   "author": "Rodrigo Silveira",
-  "version": "0.2.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RodrigoMattosoSilveira/react-redux-todo"
-  },
+  "version": "0.3.0",
   "homepage": "https://rodrigomattososilveira.github.io/react-redux-todo/",
+  "private": false,
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.11",
     "@material-ui/icons": "^4.9.1",

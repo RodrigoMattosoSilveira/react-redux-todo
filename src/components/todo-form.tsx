@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 // Todo form component
 const TodoForm = (props: Props) => {
+	console.log('TodoForm: Loading the app')
 	const classes = useStyles();
 	const [textFieldValid, setTextFieldValid] = React.useState(true);
 	const [textFieldValue, setTextFieldValue] = React.useState("");
@@ -63,15 +64,6 @@ const TodoForm = (props: Props) => {
 		props.todo_add(textFieldValue);
 	};
 	return (
-		// <div className="todo-form">
-		// 	<input
-		// 		ref={inputRef}
-		// 		type="text"
-		// 		placeholder='Enter new todo'
-		// 		onChange={event => handleInputOnChange(event)}
-		// 		onKeyPress={event => handleInputOnKeyPress(event)}
-		// 	/>
-		// </div>
 		<div className={classes.root} style={{marginTop: '10px', marginBottom: '10px'}}>
 			<form noValidate autoComplete="off">
 				<div>

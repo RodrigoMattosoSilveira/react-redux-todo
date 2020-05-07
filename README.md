@@ -1,3 +1,16 @@
+# GitHub Pages
+## To publish it
+Run the following command:
+````bash
+rodrigomattososilveira@Rodrigos-MBP-2[~/projects/react_todo]
+$ yarn deploy
+````
+## To view it
+Navigate to: [GitHub pages](https://rodrigomattososilveira.github.io/react-redux-todo/)
+
+# Introduction
+This is an exercise to learn React, Redux, and Material UI.
+
 I built this from scratch by:
 1. Combining a couple of Read apps
   1. I liked the structure of one and the styling of the other; I wrote the third from scratch;
