@@ -1,13 +1,10 @@
 {
   "name": "react_todo",
   "author": "Rodrigo Silveira",
-  "version": "0.2.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RodrigoMattosoSilveira/react-redux-todo"
-  },
-  "license": "MIT",
+  "version": "0.3.0",
+  "homepage": "https://rodrigomattososilveira.github.io/react-redux-todo/",
   "private": false,
+  "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^4.9.11",
     "@material-ui/icons": "^4.9.1",
@@ -23,6 +20,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -52,6 +51,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.7",
     "@types/shortid": "^0.0.29",
+    "gh-pages": "^2.2.0",
     "typescript": "~3.7.2"
   }
 }
