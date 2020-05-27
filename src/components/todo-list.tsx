@@ -64,7 +64,7 @@ type Props = StateProps & DispatchProps
  */
 
 function computeVisible (visibilityFilter: string, isCompleted: boolean ): string {
-	console.log('TodoList/computeVisible visibilityFilter: ' + visibilityFilter)
+	// console.log('TodoList/computeVisible visibilityFilter: ' + visibilityFilter)
     let className = 'show-todo-item';
     if ((visibilityFilter === 'open' && isCompleted) || (visibilityFilter === 'done' && !isCompleted)) {
         className = 'hide-todo-item';

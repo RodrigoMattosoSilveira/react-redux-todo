@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 // Todo form component
 const TodoForm = (props: Props) => {
-	console.log('TodoForm: Loading the app')
+	// console.log('TodoForm: Loading the app')
 	const classes = useStyles();
 	const [textFieldValid, setTextFieldValid] = React.useState(true);
 	const [textFieldValue, setTextFieldValue] = React.useState("");
@@ -60,10 +60,10 @@ const TodoForm = (props: Props) => {
 	};
 	const saveNewTodo = () => {
 		console.log("Saving new todo: " + textFieldValue);
+		props.todo_add(textFieldValue, priorityFieldValue);
 		setTextFieldValue("");
 		setPristine(true);
 		setPriorityFieldValue('LOW')
-		props.todo_add(textFieldValue, priorityFieldValue);
 	};
 	return (
 		<div className={classes.root} style={{marginTop: '10px', marginBottom: '10px'}}>
