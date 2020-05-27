@@ -15,7 +15,7 @@ interface Props extends PropsFromRedux {
 const mapStateToProps = null;
 
 const mapDispatchToProps = {
-	todo_add: (text: string) => todo_add(text)
+	todo_add: (text: string, priority: string) => todo_add(text, priority)
 }
 
 const connector = connect(
@@ -38,6 +38,7 @@ const TodoForm = (props: Props) => {
 	const [textFieldValid, setTextFieldValid] = React.useState(true);
 	const [textFieldValue, setTextFieldValue] = React.useState("");
 	const [pristine, setPristine] = React.useState(true);
+	const [priorityFieldValue, setPriorityFieldValue] = React.useState('LOW');
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		let valid = true;
 		setPristine(false);
@@ -61,7 +62,8 @@ const TodoForm = (props: Props) => {
 		console.log("Saving new todo: " + textFieldValue);
 		setTextFieldValue("");
 		setPristine(true);
-		props.todo_add(textFieldValue);
+		setPriorityFieldValue('LOW')
+		props.todo_add(textFieldValue, priorityFieldValue);
 	};
 	return (
 		<div className={classes.root} style={{marginTop: '10px', marginBottom: '10px'}}>

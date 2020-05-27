@@ -12,6 +12,8 @@ import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Divider from "@material-ui/core/Divider";
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 // Internal dependencies
 import { RootState } from '../reducers/rootReducer'
@@ -41,7 +43,7 @@ function mapStateToProps (state: RootState) {
 // Set to null if not used
 const mapDispatchToProps = {
 	todo_toggle: (id: string) => todo_toggle(id),
-	todo_update: (id: string, text: string) => todo_update(id, text),
+	todo_update: (id: string, text: string, priority: string) => todo_update(id, text, priority),
 	todo_delete: (text: string) => todo_delete(text)
 }
 
@@ -78,6 +80,9 @@ const useStyles = makeStyles({
 		'& .hide-todo-item': {
 			display: 'none',
 		},
+	},
+	todoPriority: {
+		fontSize: "0.75rem",
 	}
 });
 
@@ -96,55 +101,68 @@ const TodoList = (props: Props) => {
 	return (
 		<div>
 			<Divider />
-	  <TableContainer component={Paper}>
-		  <Table className={classes.table} size="small" aria-label="a dense table">
-			  <TableBody>
-				  {
-					  props.todoList.length > 0
-						  ?
-						  (
-							  props.todoList.map((todo: TodoInterface) => (
-								  <TableRow key={todo.id} className={computeVisible(props.visibilityFilter, todo.isCompleted)}>
-									  <TableCell
-										  component="th"
-										  scope="row"
-										  className={"todo-is-completed"}
-										  onClick={() => props.todo_toggle(todo.id)}
-									  >
-										  {computeState(todo.isCompleted)}
-									  </TableCell>
-									  <TableCell className={"todo-item"}>
-										  <TextField
-											  id="standard-basic"
-											  value={todo.text}
-											  onChange={() => props.todo_update(todo.id, todo.text)}
-											  fullWidth />
-									  </TableCell>
-									  <TableCell align="right" className={"todo-delete-me"}>
-										  <IconButton
-											  aria-label="delete"
-											  onClick={() => props.todo_delete(todo.id)}
-										  >
-											  <DeleteIcon fontSize="small" />
-										  </IconButton>
-									  </TableCell>
-								  </TableRow>
-							  ))
-						  )
-						  :
-						  (
-							  <TableRow key='NONE'>
-								  {/*<TableCell component="th" scope="row" className={"todo-is- completed"}> </TableCell>*/}
-								  <TableCell className={"todo-item"} align={'center'}><div>You are done</div></TableCell>
-								  {/*<TableCell align="right" className={"todo-delete-me"}> </TableCell>*/}
-							  </TableRow>
-						  )
-				  }
-			  </TableBody>
-		  </Table>
-	  </TableContainer>
+			<TableContainer component={Paper}>
+				<Table className={classes.table} size="small" aria-label="a dense table">
+					<TableBody>
+						{
+							props.todoList.length > 0
+							?
+							(
+								props.todoList.map((todo: TodoInterface) => (
+								<TableRow key={todo.id} className={computeVisible(props.visibilityFilter, todo.isCompleted)}>
+									<TableCell
+										component="th"
+										scope="row"
+										className={"todo-is-completed"}
+										onClick={() => props.todo_toggle(todo.id)}
+										>
+										{computeState(todo.isCompleted)}
+									</TableCell>
+									<TableCell className={"todo-item"}>
+										<TextField
+										id="standard-basic"
+										value={todo.text}
+										onChange={() => props.todo_update(todo.id, todo.text, todo.priority)}
+										fullWidth />
+									</TableCell>
+									<TableCell className={"todo-item"}>
+										<Select className={classes.todoPriority}
+											labelId="demo-simple-select-label"
+											id="demo-simple-select"
+											value={todo.priority}
+											onChange={(event: React.ChangeEvent<{ value: unknown }>) => props.todo_update(todo.id, todo.text, event.target.value as string)}
+										>
+											<MenuItem value={'LOW'}>LOW</MenuItem>
+											<MenuItem value={'MEDIUM'}>MEDIUM</MenuItem>
+											<MenuItem value={'HIGH'}>HIGH</MenuItem>
+										</Select>
+									</TableCell>
+									<TableCell align="right" className={"todo-delete-me"}>
+											<IconButton
+												aria-label="delete"
+												onClick={() => props.todo_delete(todo.id)}
+											>
+											<DeleteIcon fontSize="small" />
+										</IconButton>
+									</TableCell>
+								</TableRow>
+								))
+							)
+							:
+							(
+								<TableRow key='NONE'>
+									{/*<TableCell component="th" scope="row" className={"todo-is- completed"}> </TableCell>*/}
+									<TableCell className={"todo-item"} align={'center'}>
+										<div>You are done</div>
+									</TableCell>
+									{/*<TableCell align="right" className={"todo-delete-me"}> </TableCell>*/}
+								</TableRow>
+							)
+						}
+					</TableBody>
+				</Table>
+			</TableContainer>
 		</div>
-	
 	)
 }
 

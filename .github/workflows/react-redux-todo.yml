@@ -1,7 +1,7 @@
 name: React Redux Material Exercise
 on:
   push:
-    branches: [ master, issue-16-badge ]
+    branches: [ master, issue-18-add-priority ]
   pull_request:
     branches: [ master ]
 
