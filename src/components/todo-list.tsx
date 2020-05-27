@@ -83,7 +83,7 @@ const useStyles = makeStyles({
 	},
 	todoPriority: {
 		fontSize: "0.75rem",
-	}
+	},
 });
 
 const computeState = (isCompleted: boolean) => {

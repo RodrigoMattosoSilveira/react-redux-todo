@@ -1,8 +1,19 @@
 // Import dependencies
 import * as React from 'react';
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import { IconButton, Grid, TextField } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import Button from '@material-ui/core/Button';
 import SaveIcon from "@material-ui/icons/Save";
+import Paper from "@material-ui/core/Paper";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+// import TableHead from '@material-ui/core/TableHead';
+import TableRow from "@material-ui/core/TableRow";
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 // Import interfaces
 import { todo_add } from '../actions/todo-actions';
@@ -27,6 +38,20 @@ const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		root: {
 			flexGrow: 1,
+		},
+		table: {
+			/* minWidth: 650, */
+			tableLayout: "auto",
+			width: "100%",
+			'& .hide-todo-item': {
+				display: 'none',
+			},
+		},
+		todoPriority: {
+			fontSize: "0.75rem",
+		},
+		button: {
+			margin: theme.spacing(1),
 		},
 	}),
 );
@@ -69,33 +94,54 @@ const TodoForm = (props: Props) => {
 		<div className={classes.root} style={{marginTop: '10px', marginBottom: '10px'}}>
 			<form noValidate autoComplete="off">
 				<div>
-					<Grid container className={classes.root} spacing={1}>
-						<Grid item xs={11}>
-							<TextField
-								id="outlined-basic"
-								label="Enter todo item"
-								onChange={handleChange}
-								error={!textFieldValid}
-								helperText={
-									textFieldValid
-										? "Enter the new todo text and click Save"
-										: "Todo text must have at least one non-blank character"
-								}
-								value={textFieldValue}
-								fullWidth
-							/>
-						</Grid>
-						<Grid item xs={1}>
-							<IconButton
-								color="primary"
-								disabled={pristine || !textFieldValid}
-								aria-label="directions"
-								onClick={saveNewTodo}
-							>
-								<SaveIcon />
-							</IconButton>
-						</Grid>
-					</Grid>
+					<TableContainer component={Paper}>
+						<Table className={classes.table} size="small" aria-label="a dense table">
+							<TableBody>
+								<TableRow>
+									<TableCell className={"todo-item"}>
+										<TextField
+											id="standard-basic"
+											value={textFieldValue}
+											onChange={handleChange}
+											error={!textFieldValid}
+											helperText={
+												textFieldValid
+													? "Enter the new todo text"
+													: "Must have at least one non-blank character"
+											}
+											fullWidth
+										/>
+									</TableCell>
+									<TableCell className={"todo-item"}>
+										<Select className={classes.todoPriority}
+												labelId="demo-simple-select-label"
+												id="demo-simple-select"
+												value={priorityFieldValue}
+												onChange={(event: React.ChangeEvent<{ value: unknown }>) => setPriorityFieldValue(event.target.value as string)}
+										>
+											<MenuItem value={'LOW'}>LOW</MenuItem>
+											<MenuItem value={'MEDIUM'}>MEDIUM</MenuItem>
+											<MenuItem value={'HIGH'}>HIGH</MenuItem>
+										</Select>
+										<FormHelperText>Select Priority</FormHelperText>
+									</TableCell>
+									<TableCell align="right" className={"todo-delete-me"}>
+										<Button
+											variant="contained"
+											color="primary"
+											size="small"
+											className={classes.button}
+											disabled={pristine || !textFieldValid}
+											startIcon={<SaveIcon />}
+											onClick={saveNewTodo}
+										>
+											Save
+										</Button>
+									</TableCell>
+								</TableRow>
+							</TableBody>
+						</Table>
+					</TableContainer>
 				</div>
 			</form>
 		</div>
