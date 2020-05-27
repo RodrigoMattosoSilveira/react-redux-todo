@@ -2,7 +2,7 @@ import shortid from 'shortid';
 
 import { TODO_ACTIONS } from '../reference/references';
 import { TodoActionInterface } from '../interfaces/interfaces';
-import {getPriority} from "os";
+// import {getPriority} from "os";
 
 export const todo_add = (text: string, priority: string): TodoActionInterface => ({
 	type: TODO_ACTIONS.CREATE,
