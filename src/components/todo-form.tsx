@@ -47,8 +47,14 @@ const useStyles = makeStyles((theme: Theme) =>
 				display: 'none',
 			},
 		},
+		todoTextFont: {
+			fontSize: "1rem",
+		},
 		todoPriority: {
-			fontSize: "0.75rem",
+			width: "32px"
+		},
+		todoPriorityFont: {
+			fontSize: "1rem"
 		},
 		button: {
 			margin: theme.spacing(1),
@@ -98,7 +104,7 @@ const TodoForm = (props: Props) => {
 						<Table className={classes.table} size="small" aria-label="a dense table">
 							<TableBody>
 								<TableRow>
-									<TableCell className={"todo-item"}>
+									<TableCell className={classes.todoTextFont}>
 										<TextField
 											id="standard-basic"
 											value={textFieldValue}
@@ -106,14 +112,14 @@ const TodoForm = (props: Props) => {
 											error={!textFieldValid}
 											helperText={
 												textFieldValid
-													? "Enter the new todo text"
+													? "Text"
 													: "Must have at least one non-blank character"
 											}
 											fullWidth
 										/>
 									</TableCell>
-									<TableCell className={"todo-item"}>
-										<Select className={classes.todoPriority}
+									<TableCell className={classes.todoPriority}>
+										<Select className={classes.todoPriorityFont}
 												labelId="demo-simple-select-label"
 												id="demo-simple-select"
 												value={priorityFieldValue}
@@ -123,7 +129,7 @@ const TodoForm = (props: Props) => {
 											<MenuItem value={'MEDIUM'}>MEDIUM</MenuItem>
 											<MenuItem value={'HIGH'}>HIGH</MenuItem>
 										</Select>
-										<FormHelperText>Select Priority</FormHelperText>
+										<FormHelperText>Priority</FormHelperText>
 									</TableCell>
 									<TableCell align="right" className={"todo-delete-me"}>
 										<Button

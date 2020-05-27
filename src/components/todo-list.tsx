@@ -81,9 +81,15 @@ const useStyles = makeStyles({
 			display: 'none',
 		},
 	},
-	todoPriority: {
-		fontSize: "0.75rem",
+	todoTextFont: {
+		fontSize: "1rem",
 	},
+	todoPriority: {
+		width: "32px"
+	},
+	todoPriorityFont: {
+		fontSize: "1rem"
+	}
 });
 
 const computeState = (isCompleted: boolean) => {
@@ -118,15 +124,15 @@ const TodoList = (props: Props) => {
 										>
 										{computeState(todo.isCompleted)}
 									</TableCell>
-									<TableCell className={"todo-item"}>
+									<TableCell className={classes.todoTextFont}>
 										<TextField
 										id="standard-basic"
 										value={todo.text}
 										onChange={() => props.todo_update(todo.id, todo.text, todo.priority)}
 										fullWidth />
 									</TableCell>
-									<TableCell className={"todo-item"}>
-										<Select className={classes.todoPriority}
+									<TableCell className={classes.todoPriority}>
+										<Select className={classes.todoPriorityFont}
 											labelId="demo-simple-select-label"
 											id="demo-simple-select"
 											value={todo.priority}
