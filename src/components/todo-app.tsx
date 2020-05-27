@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TodoApp = () => {
-	console.log('TodoApp: Loading the app')
+	// console.log('TodoApp: Loading the app')
 	const classes = useStyles();
 	return (
 		<div className="todo-list-app">

@@ -1,8 +1,9 @@
 // Todo interface
 export interface TodoInterface {
-  id: string;
-  text: string;
-  isCompleted: boolean;
+	id: string;
+	text: string;
+	isCompleted: boolean;
+	priority: string;
 }
 
 // Todo form interface
@@ -40,7 +41,8 @@ export interface VisibilityFiltersInterface {
 export interface TodoActionInterface {
     type: string,
     id: string,
-    text: string
+    text: string,
+	priority: string
 }
 
 // Visibility Action Interface

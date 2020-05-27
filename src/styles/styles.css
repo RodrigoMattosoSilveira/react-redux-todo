@@ -197,6 +197,9 @@ span.todo-item-state {
     outline: 0;
     border-bottom: 1px solid #3498db;
 }
+.todo-priority {
+    font-size: 0.75rem;
+}
 
 /* Remove item */
 .todo-delete-me {
